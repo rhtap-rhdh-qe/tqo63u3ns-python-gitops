@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: tqo63u3ns-python-gitops
+  description: This is GitOps manifest for tqo63u3ns-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=tqo63u3ns-python
+    backstage.io/kubernetes-id: tqo63u3ns-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: tqo63u3ns-python   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:tqo63u3ns-python
